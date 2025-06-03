@@ -1,0 +1,238 @@
+/* GlobalData Design System Utility Classes */
+
+/* Custom CSS properties for easier theming */
+:root {
+  --gd-font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --gd-font-size-base: 1rem;
+  --gd-line-height-base: 1.5;
+  
+  /* Color system */
+  --gd-color-primary: #2e293d;
+  --gd-color-secondary: #0034ec;
+  --gd-color-background: #f5f7fa;
+  --gd-color-surface: #ffffff;
+  --gd-color-surface-secondary: #f0f2f5;
+  --gd-color-text: #2e293d;
+  --gd-color-text-secondary: #6c757d;
+  --gd-color-text-muted: #868e96;
+  
+  /* Spacing scale */
+  --gd-spacing-xs: 0.25rem;
+  --gd-spacing-sm: 0.5rem;
+  --gd-spacing-md: 1rem;
+  --gd-spacing-lg: 1.5rem;
+  --gd-spacing-xl: 3rem;
+  
+  /* Border radius */
+  --gd-border-radius: 0.25rem;
+  --gd-border-radius-lg: 0.375rem;
+  
+  /* Shadows */
+  --gd-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --gd-shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --gd-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+/* Utility classes for common GlobalData patterns */
+.gd-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--gd-spacing-md);
+}
+
+.gd-card {
+  background: white;
+  border-radius: var(--gd-border-radius-lg);
+  padding: var(--gd-spacing-lg);
+  box-shadow: var(--gd-shadow-sm);
+  border: 1px solid #f1f3f4;
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.gd-card:hover {
+  box-shadow: var(--gd-shadow-md);
+}
+
+.gd-btn {
+  font-family: var(--gd-font-family);
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 0.5rem 1rem;
+  border-radius: var(--gd-border-radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.15s ease-in-out;
+}
+
+.gd-btn-primary {
+  background-color: #2e293d;
+  color: white;
+  border-color: #2e293d;
+}
+
+.gd-btn-primary:hover {
+  background-color: #231142;
+  border-color: #231142;
+}
+
+.gd-btn-secondary {
+  background-color: #0034ec;
+  color: white;
+  border-color: #0034ec;
+}
+
+.gd-btn-secondary:hover {
+  background-color: #0028bc;
+  border-color: #0028bc;
+}
+
+.gd-btn-outline {
+  background-color: transparent;
+  color: #2e293d;
+  border-color: #2e293d;
+}
+
+.gd-btn-outline:hover {
+  background-color: #2e293d;
+  color: white;
+}
+
+.gd-form-control {
+  font-family: var(--gd-font-family);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #dee2e6;
+  border-radius: var(--gd-border-radius);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  color: #2e293d;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.gd-form-control:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Typography utilities */
+.gd-text-primary {
+  color: #2e293d !important;
+}
+
+.gd-text-secondary {
+  color: #6c757d !important;
+}
+
+.gd-text-muted {
+  color: #868e96 !important;
+}
+
+.gd-text-success {
+  color: #28a745 !important;
+}
+
+.gd-text-danger {
+  color: #dc3545 !important;
+}
+
+.gd-text-warning {
+  color: #ffc107 !important;
+}
+
+.gd-text-info {
+  color: #17a2b8 !important;
+}
+
+/* Background utilities */
+.gd-bg-primary {
+  background-color: #2e293d !important;
+}
+
+.gd-bg-secondary {
+  background-color: #0034ec !important;
+}
+
+.gd-bg-light {
+  background-color: #f5f7fa !important;
+}
+
+.gd-bg-white {
+  background-color: white !important;
+}
+
+.gd-bg-surface-secondary {
+  background-color: #f0f2f5 !important;
+}
+
+/* Spacing utilities */
+.gd-m-0 { margin: 0 !important; }
+.gd-m-1 { margin: var(--gd-spacing-xs) !important; }
+.gd-m-2 { margin: var(--gd-spacing-sm) !important; }
+.gd-m-3 { margin: var(--gd-spacing-md) !important; }
+.gd-m-4 { margin: var(--gd-spacing-lg) !important; }
+.gd-m-5 { margin: var(--gd-spacing-xl) !important; }
+
+.gd-p-0 { padding: 0 !important; }
+.gd-p-1 { padding: var(--gd-spacing-xs) !important; }
+.gd-p-2 { padding: var(--gd-spacing-sm) !important; }
+.gd-p-3 { padding: var(--gd-spacing-md) !important; }
+.gd-p-4 { padding: var(--gd-spacing-lg) !important; }
+.gd-p-5 { padding: var(--gd-spacing-xl) !important; }
+
+/* Flexbox utilities */
+.gd-d-flex {
+  display: flex !important;
+}
+
+.gd-justify-content-center {
+  justify-content: center !important;
+}
+
+.gd-justify-content-between {
+  justify-content: space-between !important;
+}
+
+.gd-align-items-center {
+  align-items: center !important;
+}
+
+.gd-flex-column {
+  flex-direction: column !important;
+}
+
+.gd-flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+/* Grid utilities */
+.gd-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+}
+
+.gd-col {
+  flex-basis: 0;
+  flex-grow: 1;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+.gd-col-12 { flex: 0 0 100%; max-width: 100%; }
+.gd-col-6 { flex: 0 0 50%; max-width: 50%; }
+.gd-col-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+.gd-col-3 { flex: 0 0 25%; max-width: 25%; }
+
+@media (max-width: 768px) {
+  .gd-col-sm-12 { flex: 0 0 100%; max-width: 100%; }
+  .gd-col-sm-6 { flex: 0 0 50%; max-width: 50%; }
+  .gd-col-sm-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+  .gd-col-sm-3 { flex: 0 0 25%; max-width: 25%; }
+}

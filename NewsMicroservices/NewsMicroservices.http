@@ -1,0 +1,19 @@
+@NewsMicroservices_HostAddress = http://localhost:5137
+
+### Health Check
+GET {{NewsMicroservices_HostAddress}}/api/news/health
+
+### Get News Listing - Basic (Page 1, 10 items)
+GET {{NewsMicroservices_HostAddress}}/api/news/listing?page=1&size=10
+
+### Get News Listing - With Search Query
+GET {{NewsMicroservices_HostAddress}}/api/news/listing?page=1&size=10&query=technology
+
+### Get News Listing - With Filters
+GET {{NewsMicroservices_HostAddress}}/api/news/listing?page=1&size=10&categories=business&companies=microsoft&locations=usa
+
+### Get News Listing - With Date Range
+GET {{NewsMicroservices_HostAddress}}/api/news/listing?page=1&size=10&fromDate=2024-01-01&toDate=2024-12-31
+
+### Get News Listing - Page 2
+GET {{NewsMicroservices_HostAddress}}/api/news/listing?page=2&size=10

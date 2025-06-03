@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "70R6QZCgBgY4PFI0R0JFHFls5o51dSJT3HAV3r1P0SY=",
+  "Source": "NewsMicroservices",
+  "BasePath": "_content/NewsMicroservices",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

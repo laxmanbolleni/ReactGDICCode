@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalData Intelligence Center</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 20px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+            margin: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #5a67d8;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .data-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .data-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+
+        .data-card h4 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .data-card p {
+            color: #666;
+            margin: 0.5rem 0;
+        }
+
+        .loading {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 2rem;
+        }
+
+        .error {
+            color: #dc3545;
+            background: #f8d7da;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .search-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .search-form {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .page-info {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .search-form {
+                flex-direction: column;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">🌐 GlobalData Intelligence Center</div>
+            <nav class="nav-links">
+                <a href="#" class="nav-link active" onclick="showPage('home')">Home</a>
+                <a href="#" class="nav-link" onclick="showPage('news')">News</a>
+                <a href="#" class="nav-link" onclick="showPage('deals')">Deals</a>
+                <a href="#" class="nav-link" onclick="showPage('dashboard')">Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <div class="hero">
+                <h1>Welcome to Intelligence Center</h1>
+                <p>Access real-time news and deals data from GlobalData's comprehensive database</p>
+                <button class="btn" onclick="showPage('news')">Explore News</button>
+                <button class="btn btn-secondary" onclick="showPage('deals')">View Deals</button>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="news-count">7.7M+</div>
+                    <div class="stat-label">News Articles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="deals-count">2.6M+</div>
+                    <div class="stat-label">Deals</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="countries-count">250+</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="api-status">✅</div>
+                    <div class="stat-label">APIs Online</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- News Page -->
+        <div id="news" class="page">
+            <div class="data-section">
+                <h2>📰 News Articles</h2>
+                <div class="search-section">
+                    <div class="search-form">
+                        <input type="text" id="news-search" class="search-input" placeholder="Search news articles...">
+                        <input type="text" id="news-company" class="search-input" placeholder="Filter by company...">
+                        <button class="btn" onclick="searchNews()">Search</button>
+                        <button class="btn btn-secondary" onclick="loadNews()">Load Latest</button>
+                    </div>
+                </div>
+                <div id="news-results"></div>
+                <div id="news-pagination" class="pagination" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Deals Page -->
+        <div id="deals" class="page">
+            <div class="data-section">
+                <h2>💼 Deals</h2>
+                <div class="search-section">
+                    <div class="search-form">
+                        <input type="text" id="deals-search" class="search-input" placeholder="Search deals...">
+                        <input type="text" id="deals-country" class="search-input" placeholder="Filter by country...">
+                        <button class="btn" onclick="searchDeals()">Search</button>
+                        <button class="btn btn-secondary" onclick="loadDeals()">Load Latest</button>
+                    </div>
+                </div>
+                <div id="deals-results"></div>
+                <div id="deals-pagination" class="pagination" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Dashboard Page -->
+        <div id="dashboard" class="page">
+            <div class="data-section">
+                <h2>📊 Analytics Dashboard</h2>
+                <button class="btn" onclick="loadDashboardData()">Load Dashboard Data</button>
+                <div id="dashboard-results"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const NEWS_API_BASE = 'http://localhost:5137/api/news';
+        const DEALS_API_BASE = 'http://localhost:5215/api/deals';
+
+        let currentNewsPage = 1;
+        let currentDealsPage = 1;
+
+        // Initialize the app
+        window.onload = function() {
+            checkAPIStatus();
+        };
+
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Remove active class from all nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Add active class to clicked nav link
+            event.target.classList.add('active');
+
+            // Load data for specific pages
+            if (pageId === 'news') {
+                loadNews();
+            } else if (pageId === 'deals') {
+                loadDeals();
+            } else if (pageId === 'dashboard') {
+                loadDashboardData();
+            }
+        }
+
+        async function checkAPIStatus() {
+            try {
+                const [newsResponse, dealsResponse] = await Promise.all([
+                    fetch(`${NEWS_API_BASE}/health`),
+                    fetch(`${DEALS_API_BASE}/health`)
+                ]);
+                
+                if (newsResponse.ok && dealsResponse.ok) {
+                    document.getElementById('api-status').textContent = '✅';
+                } else {
+                    document.getElementById('api-status').textContent = '❌';
+                }
+            } catch (error) {
+                document.getElementById('api-status').textContent = '❌';
+            }
+        }
+
+        async function loadNews(page = 1) {
+            const resultsDiv = document.getElementById('news-results');
+            resultsDiv.innerHTML = '<div class="loading">Loading news articles...</div>';
+            
+            try {
+                const response = await fetch(`${NEWS_API_BASE}/listing?page=${page}&size=6`);
+                const data = await response.json();
+                
+                let html = '<div class="data-grid">';
+                data.items?.forEach(item => {
+                    html += `
+                        <div class="data-card">
+                            <h4>${item.title}</h4>
+                            <p><strong>Published:</strong> ${new Date(item.publishedDate).toLocaleDateString()}</p>
+                            <p><strong>Article ID:</strong> ${item.newsArticleId}</p>
+                            <p><strong>Sentiment:</strong> ${item.sentiment || 'N/A'}</p>
+                            <p><strong>Locations:</strong> ${item.locations?.join(', ') || 'N/A'}</p>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                resultsDiv.innerHTML = html;
+
+                // Update pagination
+                updatePagination('news', data, page);
+                currentNewsPage = page;
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="error">Error loading news: ${error.message}</div>`;
+            }
+        }
+
+        async function loadDeals(page = 1) {
+            const resultsDiv = document.getElementById('deals-results');
+            resultsDiv.innerHTML = '<div class="loading">Loading deals...</div>';
+            
+            try {
+                const response = await fetch(`${DEALS_API_BASE}/listing?page=${page}&size=6`);
+                const data = await response.json();
+                
+                let html = '<div class="data-grid">';
+                data.items?.forEach(item => {
+                    html += `
+                        <div class="data-card">
+                            <h4>${item.title}</h4>
+                            <p><strong>Country:</strong> ${item.country}</p>
+                            <p><strong>Deal Type:</strong> ${item.dealType}</p>
+                            <p><strong>Status:</strong> ${item.status}</p>
+                            <p><strong>Value:</strong> $${item.dealValue?.toLocaleString() || 'N/A'}</p>
+                            <p><strong>Published:</strong> ${new Date(item.publishedDate).toLocaleDateString()}</p>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                resultsDiv.innerHTML = html;
+
+                // Update pagination
+                updatePagination('deals', data, page);
+                currentDealsPage = page;
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="error">Error loading deals: ${error.message}</div>`;
+            }
+        }
+
+        async function searchNews() {
+            const query = document.getElementById('news-search').value;
+            const company = document.getElementById('news-company').value;
+            
+            const resultsDiv = document.getElementById('news-results');
+            resultsDiv.innerHTML = '<div class="loading">Searching news...</div>';
+            
+            try {
+                let url = `${NEWS_API_BASE}/listing?page=1&size=6`;
+                if (query) url += `&query=${encodeURIComponent(query)}`;
+                if (company) url += `&companies=${encodeURIComponent(company)}`;
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                let html = '<div class="data-grid">';
+                data.items?.forEach(item => {
+                    html += `
+                        <div class="data-card">
+                            <h4>${item.title}</h4>
+                            <p><strong>Published:</strong> ${new Date(item.publishedDate).toLocaleDateString()}</p>
+                            <p><strong>Companies:</strong> ${item.relatedCompanyNames?.join(', ') || 'N/A'}</p>
+                            <p><strong>Sentiment:</strong> ${item.sentiment || 'N/A'}</p>
+                            <p><strong>Locations:</strong> ${item.locations?.join(', ') || 'N/A'}</p>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                resultsDiv.innerHTML = html;
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="error">Error searching news: ${error.message}</div>`;
+            }
+        }
+
+        async function searchDeals() {
+            const query = document.getElementById('deals-search').value;
+            const country = document.getElementById('deals-country').value;
+            
+            const resultsDiv = document.getElementById('deals-results');
+            resultsDiv.innerHTML = '<div class="loading">Searching deals...</div>';
+            
+            try {
+                let url = `${DEALS_API_BASE}/listing?page=1&size=6`;
+                if (query) url += `&query=${encodeURIComponent(query)}`;
+                if (country) url += `&country=${encodeURIComponent(country)}`;
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                let html = '<div class="data-grid">';
+                data.items?.forEach(item => {
+                    html += `
+                        <div class="data-card">
+                            <h4>${item.title}</h4>
+                            <p><strong>Country:</strong> ${item.country}</p>
+                            <p><strong>Deal Type:</strong> ${item.dealType}</p>
+                            <p><strong>Status:</strong> ${item.status}</p>
+                            <p><strong>Value:</strong> $${item.dealValue?.toLocaleString() || 'N/A'}</p>
+                            <p><strong>Published:</strong> ${new Date(item.publishedDate).toLocaleDateString()}</p>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                resultsDiv.innerHTML = html;
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="error">Error searching deals: ${error.message}</div>`;
+            }
+        }
+
+        async function loadDashboardData() {
+            const resultsDiv = document.getElementById('dashboard-results');
+            resultsDiv.innerHTML = '<div class="loading">Loading dashboard data...</div>';
+            
+            try {
+                const [countryResponse, typeResponse, statusResponse] = await Promise.all([
+                    fetch(`${DEALS_API_BASE}/by-country`),
+                    fetch(`${DEALS_API_BASE}/by-type`),
+                    fetch(`${DEALS_API_BASE}/by-status`)
+                ]);
+                
+                const countryData = await countryResponse.json();
+                const typeData = await typeResponse.json();
+                const statusData = await statusResponse.json();
+                
+                const topCountries = countryData.countries?.slice(0, 5) || [];
+                const topTypes = typeData.types?.slice(0, 5) || [];
+                const topStatuses = statusData.statuses?.slice(0, 5) || [];
+                
+                resultsDiv.innerHTML = `
+                    <div class="data-grid">
+                        <div class="data-card">
+                            <h4>🌍 Top Countries by Deal Volume</h4>
+                            ${topCountries.map(country => 
+                                `<p><strong>${country.country}:</strong> ${country.dealVolume?.toLocaleString()} deals</p>`
+                            ).join('')}
+                        </div>
+                        <div class="data-card">
+                            <h4>📈 Deal Types</h4>
+                            ${topTypes.map(type => 
+                                `<p><strong>${type.type}:</strong> ${type.dealVolume?.toLocaleString()} deals</p>`
+                            ).join('')}
+                        </div>
+                        <div class="data-card">
+                            <h4>📊 Deal Statuses</h4>
+                            ${topStatuses.map(status => 
+                                `<p><strong>${status.status}:</strong> ${status.dealVolume?.toLocaleString()} deals</p>`
+                            ).join('')}
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="error">Error loading dashboard: ${error.message}</div>`;
+            }
+        }
+
+        function updatePagination(type, data, currentPage) {
+            const paginationDiv = document.getElementById(`${type}-pagination`);
+            
+            if (data.totalPages > 1) {
+                paginationDiv.style.display = 'flex';
+                paginationDiv.innerHTML = `
+                    <button class="btn" onclick="load${type.charAt(0).toUpperCase() + type.slice(1)}(${currentPage - 1})" 
+                            ${currentPage <= 1 ? 'disabled' : ''}>Previous</button>
+                    <div class="page-info">
+                        Page ${currentPage} of ${data.totalPages?.toLocaleString()} 
+                        (${data.totalItems?.toLocaleString()} total items)
+                    </div>
+                    <button class="btn" onclick="load${type.charAt(0).toUpperCase() + type.slice(1)}(${currentPage + 1})" 
+                            ${currentPage >= data.totalPages ? 'disabled' : ''}>Next</button>
+                `;
+            } else {
+                paginationDiv.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* Ensure header is visible */
+header {
+  display: block !important;
+  visibility: visible !important;
+  position: relative !important;
+  background-color: #2e293d !important;
+  color: white !important;
+}
+
+main {
+  flex: 1;
+  padding: 0;
+  background-color: #f5f7fa;
+}

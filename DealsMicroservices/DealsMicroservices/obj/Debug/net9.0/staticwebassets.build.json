@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "QeS/eQtrLdY3gw2uWrT82/bYIXfFH1tiRWJpPfgUhvI=",
+  "Source": "DealsMicroservices",
+  "BasePath": "_content/DealsMicroservices",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

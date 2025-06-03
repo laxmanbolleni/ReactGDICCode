@@ -1,0 +1,49 @@
+@DealsMicroservices_HostAddress = http://localhost:5215
+
+# Health check endpoint
+GET {{DealsMicroservices_HostAddress}}/api/deals/health
+
+###
+
+# Get deals listing - basic request
+GET {{DealsMicroservices_HostAddress}}/api/deals/listing?page=1&size=10
+
+###
+
+# Get deals listing with filters
+GET {{DealsMicroservices_HostAddress}}/api/deals/listing?page=1&size=10&country=United States&dealType=Merger
+
+###
+
+# Get deals listing with search query
+GET {{DealsMicroservices_HostAddress}}/api/deals/listing?page=1&size=10&query=acquisition
+
+###
+
+# Get deals listing with deal value range
+GET {{DealsMicroservices_HostAddress}}/api/deals/listing?page=1&size=10&minDealValue=1000000&maxDealValue=100000000
+
+###
+
+# Get deals listing with date range
+GET {{DealsMicroservices_HostAddress}}/api/deals/listing?page=1&size=10&fromDate=2025-01-01&toDate=2025-12-31
+
+###
+
+# Get deals by country aggregation (for world map visualization)
+GET {{DealsMicroservices_HostAddress}}/api/deals/by-country
+
+###
+
+# Get deals by type aggregation (for analytics visualization)
+GET {{DealsMicroservices_HostAddress}}/api/deals/by-type
+
+###
+
+# Get deals by status aggregation (for analytics visualization)
+GET {{DealsMicroservices_HostAddress}}/api/deals/by-status
+
+###
+
+# Root endpoint
+GET {{DealsMicroservices_HostAddress}}/
