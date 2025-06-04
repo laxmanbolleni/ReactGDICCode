@@ -22,12 +22,6 @@ C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\scopedcss\bundl
 C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\staticwebassets.build.json
 C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\staticwebassets.development.json
 C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\staticwebassets\msbuild.NewsMicroservices.Microsoft.AspNetCore.StaticWebAssets.props
-C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\staticwebassets\msbuild.NewsMicroservices.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\staticwebassets\msbuild.build.NewsMicroservices.props
-C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.NewsMicroservices.props
-C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.NewsMicroservices.props
-C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\staticwebassets.pack.json
 C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\NewsMicr.3DB4D44A.Up2Date
 C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\NewsMicroservices.dll
 C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\refint\NewsMicroservices.dll
@@ -35,3 +29,4 @@ C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\NewsMicroservic
 C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\NewsMicroservices.genruntimeconfig.cache
 C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\ref\NewsMicroservices.dll
 C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\GDICCodebase\GlobalData.IC\NewsMicroservices\obj\Debug\net9.0\NewsMicroservices.sourcelink.json

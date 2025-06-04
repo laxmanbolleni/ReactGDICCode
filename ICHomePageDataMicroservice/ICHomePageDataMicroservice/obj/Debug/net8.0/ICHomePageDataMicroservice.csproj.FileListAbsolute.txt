@@ -63,3 +63,4 @@ C:\GDICCodebase\GlobalData.IC\ICHomePageDataMicroservice\ICHomePageDataMicroserv
 C:\GDICCodebase\GlobalData.IC\ICHomePageDataMicroservice\ICHomePageDataMicroservice\obj\Debug\net8.0\ICHomePageDataMicroservice.pdb
 C:\GDICCodebase\GlobalData.IC\ICHomePageDataMicroservice\ICHomePageDataMicroservice\obj\Debug\net8.0\ICHomePageDataMicroservice.genruntimeconfig.cache
 C:\GDICCodebase\GlobalData.IC\ICHomePageDataMicroservice\ICHomePageDataMicroservice\obj\Debug\net8.0\ref\ICHomePageDataMicroservice.dll
+C:\GDICCodebase\GlobalData.IC\ICHomePageDataMicroservice\ICHomePageDataMicroservice\obj\Debug\net8.0\ICHomePageDataMicroservice.sourcelink.json

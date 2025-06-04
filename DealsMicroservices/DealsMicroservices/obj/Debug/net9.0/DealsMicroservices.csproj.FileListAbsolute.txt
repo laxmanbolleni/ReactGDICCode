@@ -22,12 +22,6 @@ C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\ne
 C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\staticwebassets.build.json
 C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\staticwebassets.development.json
 C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\staticwebassets\msbuild.DealsMicroservices.Microsoft.AspNetCore.StaticWebAssets.props
-C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\staticwebassets\msbuild.DealsMicroservices.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\staticwebassets\msbuild.build.DealsMicroservices.props
-C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.DealsMicroservices.props
-C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.DealsMicroservices.props
-C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\staticwebassets.pack.json
 C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\DealsMic.B321EB32.Up2Date
 C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\DealsMicroservices.dll
 C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\refint\DealsMicroservices.dll
@@ -35,3 +29,4 @@ C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\ne
 C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\DealsMicroservices.genruntimeconfig.cache
 C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\ref\DealsMicroservices.dll
 C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\GDICCodebase\GlobalData.IC\DealsMicroservices\DealsMicroservices\obj\Debug\net9.0\DealsMicroservices.sourcelink.json
